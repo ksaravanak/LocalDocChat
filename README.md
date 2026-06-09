@@ -68,7 +68,7 @@ Open **http://127.0.0.1:8090**
 
 Use this when you need access **outside your network** (mobile data, another office, etc.).
 
-> **Do not** use `http://192.168.x.x:8090` from outside — that only works on the same Wi‑Fi.
+> **Do not** use `http://ServerName:8090` from outside — that only works on the same Wi‑Fi.
 
 1. Set a password in `.env`:
    ```
