@@ -1,0 +1,9 @@
+data/
+.env
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+cloudflared.exe
+public-url.txt
+server.log

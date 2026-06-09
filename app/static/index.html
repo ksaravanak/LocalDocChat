@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LocalDocChat</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div id="login-screen" class="login-screen hidden">
+    <div class="login-card">
+      <h1>LocalDocChat</h1>
+      <p>Enter your access password to continue.</p>
+      <input id="password-input" type="password" placeholder="Password" autocomplete="current-password" />
+      <button id="login-btn" type="button">Sign in</button>
+      <p id="login-error" class="error hidden"></p>
+    </div>
+  </div>
+
+  <div id="app" class="app hidden">
+    <header class="header">
+      <div>
+        <h1>LocalDocChat</h1>
+        <p class="subtitle">100% local — Ollama + Qwen. No cloud API.</p>
+      </div>
+      <div id="status-badge" class="badge">Checking...</div>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar">
+        <section class="panel">
+          <h2>Upload documents</h2>
+          <p class="hint">PDF, DOCX, TXT, MD, CSV — max 50 MB</p>
+          <label class="upload-zone" id="upload-zone">
+            <input id="file-input" type="file" multiple accept=".pdf,.docx,.txt,.md,.csv" hidden />
+            <span>Drop files here or click to browse</span>
+          </label>
+          <div id="upload-progress" class="upload-progress hidden"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Your documents</h2>
+            <button id="refresh-docs" type="button" class="icon-btn" title="Refresh">↻</button>
+          </div>
+          <ul id="doc-list" class="doc-list"></ul>
+          <p id="empty-docs" class="empty">No documents uploaded yet.</p>
+        </section>
+      </aside>
+
+      <section class="chat">
+        <div id="messages" class="messages">
+          <div class="message assistant">
+            <div class="bubble">
+              Upload documents and ask questions. Everything runs locally on your server with Ollama and Qwen — no data sent to the cloud.
+            </div>
+          </div>
+        </div>
+
+        <form id="chat-form" class="chat-form">
+          <textarea
+            id="chat-input"
+            rows="2"
+            placeholder="Ask a question about your documents..."
+            required
+          ></textarea>
+          <button id="send-btn" type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
